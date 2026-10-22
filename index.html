@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Ankmark Studio ERP</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <main class="login-page">
+        <section class="login-card">
+
+            <div class="brand">
+                <div class="brand-logo">A</div>
+
+                <div class="brand-info">
+                    <h1>ANKMARK</h1>
+                    <p>STUDIO ERP</p>
+                </div>
+            </div>
+
+            <div class="login-heading">
+                <h2>Welcome Back</h2>
+                <p>Enter your password to access the studio ERP.</p>
+            </div>
+
+            <form id="loginForm">
+                <label for="password">Password</label>
+
+                <div class="password-wrapper">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        aria-label="Show password"
+                    >
+                        Show
+                    </button>
+                </div>
+
+                <p id="loginError" class="login-error" role="alert" hidden>
+                    Incorrect password. Please try again.
+                </p>
+
+                <button type="submit" id="loginButton" class="login-button">
+                    Login to Studio
+                </button>
+            </form>
+
+            <p class="login-footer">
+                &copy; 2026 Ankmark Studio. All rights reserved.
+            </p>
+
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ankmark Studio ERP</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+
+            <div>
+                <div class="brand-name">ANKMARK</div>
+                <div class="brand-sub">STUDIO ERP</div>
+            </div>
+        </div>
+
+        <div class="nav-section">
+
+            <div class="nav-title">WORKSPACE</div>
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="projects">
+                <span>▣</span>
+                Projects
+            </button>
+
+            <button class="nav-item" data-page="tasks">
+                <span>✓</span>
+                Tasks
+            </button>
+
+            <button class="nav-item" data-page="calendar">
+                <span>◫</span>
+                Calendar
+            </button>
+
+        </div>
+
+        <div class="nav-section">
+
+            <div class="nav-title">CRM</div>
+
+            <button class="nav-item" data-page="clients">
+                <span>♙</span>
+                Clients
+            </button>
+
+            <button class="nav-item" data-page="leads">
+                <span>◎</span>
+                Leads
+            </button>
+
+            <button class="nav-item" data-page="quotations">
+                <span>▤</span>
+                Quotations
+            </button>
+
+        </div>
+
+        <div class="nav-section">
+
+            <div class="nav-title">FINANCE</div>
+
+            <button class="nav-item" data-page="invoices">
+                <span>₹</span>
+                Invoices
+            </button>
+
+            <button class="nav-item" data-page="expenses">
+                <span>−</span>
+                Expenses
+            </button>
+
+            <button class="nav-item" data-page="reports">
+                <span>▥</span>
+                Reports
+            </button>
+
+        </div>
+
+        <div class="nav-section">
+
+            <div class="nav-title">STUDIO</div>
+
+            <button class="nav-item" data-page="assets">
+                <span>▧</span>
+                Assets
+            </button>
+
+            <button class="nav-item" data-page="team">
+                <span>♙</span>
+                Team
+            </button>
+
+        </div>
+
+        <div class="nav-section">
+
+        <div class="nav-title">DATA</div>
+
+            <button class="nav-item" data-page="backup">
+                <span>▣</span>
+                Backup & Restore
+            </button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <strong>ANKMARK STUDIO</strong>
+            <small>Studio Management System</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
+
+                <div>
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="pageSubtitle">
+                        Studio overview
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button class="profile-button">
+                    <span class="profile-avatar">A</span>
+                    <span class="profile-name">Ankit</span>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+        <div class="page-container" id="pageContainer"></div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="modalTitle">New Record</h2>
+                <p id="modalSubtitle">
+                    Add a new record
+                </p>
+            </div>
+
+            <button class="modal-close" id="modalClose">
+                ×
+            </button>
+
+        </div>
+
+        <form id="recordForm">
+
+            <div id="formFields"></div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="button secondary"
+                    id="cancelModal">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="button primary">
+                    Save Record
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    <span id="toastMessage"></span>
+</div>
+
+
+<script src="app.js"></script>
+
+
+
+</body>
+</html>

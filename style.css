@@ -1,0 +1,2756 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #111317;
+    --black-light: #1b1e23;
+
+    --white: #ffffff;
+
+    --background: #f5f6f8;
+
+    --border: #e4e6ea;
+
+    --text: #181a1f;
+    --muted: #777d87;
+
+    --hover: #f0f1f3;
+
+    --radius: 10px;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+}
+
+
+/* APP */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 250px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 18px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 20;
+
+    /* Sidebar scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* BRAND */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        6px
+        10px
+        25px;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+
+    background: white;
+
+    color: var(--black);
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+
+    font-size: 18px;
+}
+
+.brand-name {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    font-weight: 800;
+}
+
+.brand-sub {
+    color: #888e98;
+
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+
+    margin-top: 3px;
+}
+
+
+/* NAV */
+
+.nav-section {
+    margin-bottom: 18px;
+}
+
+.nav-title {
+    font-size: 10px;
+
+    color: #656b75;
+
+    letter-spacing: 1.3px;
+
+    padding:
+        7px
+        12px;
+
+    font-weight: 600;
+}
+
+.nav-item {
+    width: 100%;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #aeb3bc;
+
+    padding:
+        11px
+        12px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    margin-bottom: 2px;
+
+    text-align: left;
+
+    transition: .15s;
+}
+
+.nav-item span {
+    width: 18px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+.nav-item:hover {
+    background: #202329;
+
+    color: white;
+}
+
+.nav-item.active {
+    background: #292d34;
+
+    color: white;
+}
+
+
+/* SIDEBAR BOTTOM */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding:
+        18px
+        10px;
+
+    border-top:
+        1px solid
+        #292c31;
+
+    color: #777d87;
+}
+
+.sidebar-bottom strong {
+    display: block;
+
+    color: #b9bdc5;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.sidebar-bottom small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+
+    min-height: 100vh;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    height: 82px;
+
+    background: white;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.top-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.topbar h1 {
+    margin: 0;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+.topbar p {
+    margin:
+        4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.top-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.profile-button {
+    border: 0;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.profile-avatar {
+    width: 34px;
+    height: 34px;
+
+    background: var(--black);
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.profile-name {
+    font-size: 13px;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* PAGE */
+
+.page-container {
+    padding: 28px 30px;
+}
+
+
+/* DASHBOARD CARDS */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+}
+
+.stat-label {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.stat-number {
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-top: 8px;
+}
+
+.stat-description {
+    font-size: 11px;
+
+    color: #9aa0a9;
+
+    margin-top: 5px;
+}
+
+
+/* DASHBOARD GRID */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr;
+
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+
+/* PANEL */
+
+.panel {
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px;
+}
+
+.panel-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.panel-title {
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.panel-link {
+    border: 0;
+
+    background: transparent;
+
+    color: #555b64;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+
+/* TOOLBAR */
+
+.page-toolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.toolbar-left {
+    display: flex;
+
+    gap: 8px;
+
+    flex: 1;
+}
+
+.search-box {
+    width: 100%;
+
+    max-width: 360px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    background: white;
+}
+
+.search-box:focus {
+    border-color: #999;
+}
+
+
+/* BUTTONS */
+
+.button {
+    border: 0;
+
+    border-radius: 7px;
+
+    padding:
+        10px 15px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.button.primary {
+    background: var(--black);
+
+    color: white;
+}
+
+.button.secondary {
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    color: var(--text);
+}
+
+.button.danger {
+    background: #fff0f0;
+
+    color: #a00;
+}
+
+
+/* TABLE */
+
+.table-wrapper {
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: var(--radius);
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+}
+
+th {
+    background: #fafafa;
+
+    color: #747a84;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    font-weight: 600;
+
+    padding:
+        12px 14px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    text-align: left;
+}
+
+td {
+    padding:
+        13px 14px;
+
+    border-bottom:
+        1px solid
+        #eeeeef;
+
+    font-size: 13px;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tr:hover td {
+    background: #fafafa;
+}
+
+
+/* STATUS */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        4px 8px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    background: #eef0f3;
+
+    color: #4d535c;
+}
+
+.status.completed,
+.status.paid,
+.status.active,
+.status.won {
+    background: #eaf6ed;
+}
+
+.status.open,
+.status.new,
+.status.working {
+    background: #eef3f8;
+}
+
+.status.cancelled,
+.status.lost,
+.status.overdue {
+    background: #faeeee;
+}
+
+
+/* TABLE ACTIONS */
+
+.table-actions {
+    display: flex;
+
+    gap: 5px;
+}
+
+.table-action {
+    border:
+        1px solid
+        var(--border);
+
+    background: white;
+
+    padding:
+        5px 8px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+.table-action:hover {
+    background: var(--hover);
+}
+
+
+/* EMPTY */
+
+.empty-state {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #8b9199;
+}
+
+.empty-icon {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.empty-title {
+    color: #555a62;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.empty-description {
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* RECENT PROJECT */
+
+.project-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        12px 0;
+
+    border-bottom:
+        1px solid
+        #eee;
+}
+
+.project-row:last-child {
+    border-bottom: 0;
+}
+
+.project-name {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.project-client {
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+.quick-action {
+    border:
+        1px solid
+        var(--border);
+
+    background: white;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.quick-action:hover {
+    background: #fafafa;
+}
+
+.quick-action strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.quick-action span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    display: block;
+
+    margin-top: 3px;
+}
+
+
+/* MODAL */
+
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.55);
+
+    z-index: 100;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    background: white;
+
+    width: min(680px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 12px;
+
+    padding: 22px;
+}
+
+.modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.modal-header p {
+    margin:
+        4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.modal-close {
+    border: 0;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #777;
+}
+
+
+/* FORM */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        4px 14px;
+}
+
+.form-field {
+    margin-bottom: 13px;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    padding:
+        10px 11px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-field textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #999;
+}
+
+.modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background: var(--black);
+
+    color: white;
+
+    padding:
+        12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    transform:
+        translateY(80px);
+
+    opacity: 0;
+
+    transition: .25s;
+
+    z-index: 200;
+}
+
+.toast.show {
+    transform:
+        translateY(0);
+
+    opacity: 1;
+}
+
+/* =========================================================
+   REPORTS — RESPONSIVE LAYOUT
+========================================================= */
+
+/* Keep report content inside the available page width */
+#studioReportResult {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* Report cards */
+#studioReportResult .stats-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* Prevent report panels from forcing horizontal scrolling */
+#studioReportResult .dashboard-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+}
+
+
+/* Panels must be allowed to shrink */
+#studioReportResult .panel {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Tables stay inside their panel */
+#studioReportResult .table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Tables should not stretch the whole page */
+#studioReportResult table {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #studioReportResult .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #studioReportResult .stats-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #studioReportResult .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    #studioReportResult .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    #studioReportResult .panel {
+        width: 100%;
+    }
+
+
+    #studioReportResult .panel-header {
+        padding: 14px;
+    }
+
+
+    #studioReportResult .table-wrapper {
+        overflow-x: auto;
+    }
+
+
+    #studioReportResult table {
+        min-width: 560px;
+    }
+
+
+    #studioReportResult td,
+    #studioReportResult th {
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    #studioReportResult .stat-card {
+        width: 100%;
+    }
+
+
+    #studioReportResult .panel {
+        border-radius: 8px;
+    }
+
+
+    #studioReportResult table {
+        min-width: 520px;
+    }
+
+}
+
+/* =========================================================
+   CALENDAR MODULE
+========================================================= */
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+
+    border: 1px solid var(--border);
+    border-bottom: none;
+
+    background: #f8f8f8;
+}
+
+.calendar-weekdays > div {
+    padding: 12px 8px;
+
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #777;
+
+    border-right: 1px solid var(--border);
+
+    text-transform: uppercase;
+}
+
+.calendar-weekdays > div:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   CALENDAR GRID
+========================================================= */
+
+.calendar-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    border-left: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CALENDAR DAY
+========================================================= */
+
+.calendar-day {
+    min-height: 120px;
+
+    padding: 8px;
+
+    background: white;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease;
+}
+
+.calendar-day:hover {
+    background: #fafafa;
+}
+
+
+/* Previous / next month days */
+
+.calendar-day.other-month {
+    background: #f7f7f7;
+
+    color: #aaa;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   DATE NUMBER
+========================================================= */
+
+.calendar-date {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 6px;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #444;
+}
+
+
+/* Today */
+
+.calendar-day.today .calendar-date {
+    background: var(--black);
+
+    color: white;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.calendar-events {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.calendar-event {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    padding: 6px 7px;
+
+    border-radius: 6px;
+
+    background: #f1f1f1;
+
+    border-left: 3px solid var(--black);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform .12s ease,
+        background .12s ease;
+}
+
+
+.calendar-event:hover {
+    background: #e9e9e9;
+
+    transform: translateY(-1px);
+}
+
+
+.calendar-event strong {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.calendar-event small {
+    font-size: 10px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   CALENDAR PANEL
+========================================================= */
+
+.calendar-grid,
+.calendar-weekdays {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .calendar-day {
+        min-height: 100px;
+
+        padding: 7px;
+    }
+
+    .calendar-weekdays > div {
+        padding: 10px 5px;
+
+        font-size: 10px;
+    }
+
+    .calendar-event {
+        padding: 5px;
+    }
+
+    .calendar-event strong {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .calendar-weekdays > div {
+        font-size: 9px;
+
+        padding: 9px 2px;
+    }
+
+
+    .calendar-day {
+        min-height: 82px;
+
+        padding: 5px;
+    }
+
+
+    .calendar-date {
+        width: 22px;
+        height: 22px;
+
+        font-size: 10px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .calendar-events {
+        gap: 3px;
+    }
+
+
+    .calendar-event {
+        padding: 4px;
+
+        border-left-width: 2px;
+    }
+
+
+    .calendar-event strong {
+        font-size: 9px;
+    }
+
+
+    .calendar-event small {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .calendar-weekdays > div {
+        font-size: 8px;
+
+        padding: 8px 1px;
+    }
+
+
+    .calendar-day {
+        min-height: 70px;
+
+        padding: 4px;
+    }
+
+
+    .calendar-date {
+        width: 20px;
+        height: 20px;
+
+        font-size: 9px;
+    }
+
+
+    .calendar-event {
+        padding: 3px;
+    }
+
+ 
+    .calendar-event strong {
+        font-size: 8px;
+    }
+
+
+    .calendar-event small {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   CALENDAR MOBILE HEADER FIX
+========================================================= */
+
+/* Only affects the Calendar panel */
+.panel:has(.calendar-weekdays) .panel-header {
+    gap: 12px;
+}
+
+
+/* Tablet */
+@media (max-width: 600px) {
+
+    .panel:has(.calendar-weekdays) .panel-header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+
+    /* Month title section */
+    .panel:has(.calendar-weekdays) .panel-header > div:first-child {
+        width: 100%;
+    }
+
+
+    /* Calendar buttons section */
+    .panel:has(.calendar-weekdays) .panel-header > div:last-child {
+        width: 100%;
+
+        display: flex !important;
+
+        align-items: center;
+        justify-content: flex-end;
+
+        flex-wrap: nowrap !important;
+
+        gap: 6px;
+    }
+
+
+    /* Previous / Today / Next */
+    .panel:has(.calendar-weekdays) .panel-header > div:last-child .button {
+        flex-shrink: 0;
+    }
+
+
+    /* Add Event */
+    .panel:has(.calendar-weekdays) .panel-header > div:last-child .button.primary {
+        margin-left: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .panel:has(.calendar-weekdays) .panel-header {
+        gap: 10px;
+    }
+
+
+    .panel:has(.calendar-weekdays) .panel-header > div:last-child {
+        justify-content: flex-end;
+
+        gap: 5px;
+    }
+
+
+    .panel:has(.calendar-weekdays) .panel-header > div:last-child .button {
+        padding: 7px 9px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media(max-width: 750px) {
+
+    .sidebar {
+        transform:
+            translateX(-100%);
+
+        transition: .2s;
+    }
+
+    .sidebar.open {
+        transform:
+            translateX(0);
+    }
+
+    .main {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .topbar {
+        padding:
+            0 18px;
+    }
+
+    .page-container {
+        padding:
+            20px 18px;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field.full {
+        grid-column: auto;
+    }
+
+    .page-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .toolbar-left {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   MOBILE FORM + MODAL RESPONSIVE FIX
+   Ankmark Studio ERP
+========================================================= */
+
+
+/* Prevent every element from creating horizontal overflow */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Make form controls stay inside their container */
+
+.form-field,
+.form-field input,
+.form-field select,
+.form-field textarea {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE FORM CONTROLS
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        width: 100%;
+        max-width: 100%;
+
+        /*
+           16px prevents mobile Safari from
+           automatically zooming when an input
+           is selected.
+        */
+
+        font-size: 16px !important;
+
+        line-height: 1.35;
+
+        padding:
+            12px 12px;
+
+        box-sizing: border-box;
+    }
+
+
+    /*
+       Native date and time controls
+    */
+
+    .form-field input[type="date"],
+    .form-field input[type="time"],
+    .form-field input[type="datetime-local"],
+    .form-field input[type="month"],
+    .form-field input[type="week"] {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        display: block;
+
+        font-size: 16px !important;
+
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+
+    /*
+       Number fields
+    */
+
+    .form-field input[type="number"] {
+
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 16px !important;
+    }
+
+
+    /*
+       Select fields
+    */
+
+    .form-field select {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        font-size: 16px !important;
+
+        background-color: white;
+    }
+
+
+    /*
+       Textarea
+    */
+
+    .form-field textarea {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 100px;
+
+        font-size: 16px !important;
+    }
+
+
+    /* =====================================================
+       MODAL OVERLAY
+    ===================================================== */
+
+    .modal-overlay {
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        padding:
+            12px;
+
+        /*
+           Allow the overlay itself to scroll
+           when the phone keyboard appears.
+        */
+
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* =====================================================
+       MODAL
+    ===================================================== */
+
+    .modal {
+
+        width: 100%;
+
+        max-width: 680px;
+
+        /*
+           Do not allow the modal to become
+           wider than the phone.
+        */
+
+        min-width: 0;
+
+        max-height: calc(100vh - 24px);
+
+        /*
+           Keep the form scrollable.
+        */
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+        box-sizing: border-box;
+
+        padding:
+            18px;
+
+        margin:
+            0 auto;
+
+        border-radius: 12px;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* =====================================================
+       MODAL HEADER
+    ===================================================== */
+
+    .modal-header {
+
+        width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    .modal-header > div:first-child {
+
+        min-width: 0;
+
+        max-width: calc(100% - 45px);
+    }
+
+
+    .modal-header h2 {
+
+        font-size: 20px;
+
+        line-height: 1.2;
+    }
+
+
+    .modal-header p {
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       FORM GRID
+    ===================================================== */
+
+    .form-grid {
+
+        width: 100%;
+
+        min-width: 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    .form-field {
+
+        width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    .form-field.full {
+
+        grid-column: auto;
+    }
+
+
+    /* =====================================================
+       LABEL
+    ===================================================== */
+
+    .form-field label {
+
+        font-size: 13px;
+
+        line-height: 1.3;
+    }
+
+
+    /* =====================================================
+       MODAL FOOTER
+    ===================================================== */
+
+    .modal-footer {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        padding-bottom: 4px;
+    }
+
+
+    .modal-footer .button {
+
+        min-height: 44px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .modal-overlay {
+
+        padding:
+            8px;
+    }
+
+
+    .modal {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        max-height: calc(100vh - 16px);
+
+        padding:
+            16px;
+
+        border-radius: 10px;
+    }
+
+
+    .modal-header {
+
+        margin-bottom: 16px;
+    }
+
+
+    .modal-header h2 {
+
+        font-size: 19px;
+    }
+
+
+    .modal-close {
+
+        font-size: 28px;
+
+        flex-shrink: 0;
+    }
+
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 16px !important;
+
+        padding:
+            12px;
+    }
+
+
+    .form-field input[type="date"],
+    .form-field input[type="time"],
+    .form-field input[type="datetime-local"] {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .modal-footer {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .modal-footer .button {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .modal {
+
+        padding:
+            14px;
+    }
+
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+
+        padding:
+            11px;
+
+        font-size: 16px !important;
+    }
+
+}
+
+
+/* =========================================================
+   ANKMARK STUDIO ERP
+   MONTHLY MONEY FLOW GRAPH
+   Add this at the BOTTOM of style.css
+========================================================= */
+
+/* Main layout: Graph + Monthly Net Cash Flow */
+
+.cashflow-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+    gap: 18px;
+    align-items: start;
+    margin-top: 18px;
+    width: 100%;
+    min-width: 0;
+}
+
+.cashflow-panel {
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cashflow-panel .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+/* Year selector */
+
+.cashflow-year-select {
+    min-width: 100px;
+    max-width: 140px;
+    padding: 9px 12px;
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #202938;
+    font-size: 14px;
+    outline: none;
+}
+
+.cashflow-year-select:focus {
+    border-color: #64748b;
+}
+
+/* Graph legend */
+
+.cashflow-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.cashflow-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.cashflow-legend-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cashflow-legend-dot.received {
+    background: #16a34a;
+}
+
+.cashflow-legend-dot.spent {
+    background: #dc2626;
+}
+
+/* Graph container */
+
+.cashflow-chart-container {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 260px;
+    overflow: hidden;
+}
+
+.cashflow-chart-container svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+}
+
+.cashflow-chart-container .chart-grid-line {
+    stroke: #e8edf3;
+    stroke-width: 1;
+}
+
+.cashflow-chart-container .chart-axis-label {
+    fill: #8490a0;
+    font-size: 11px;
+}
+
+.cashflow-chart-container .chart-month-label {
+    fill: #64748b;
+    font-size: 11px;
+    text-anchor: middle;
+}
+
+.cashflow-chart-container .chart-line-received {
+    fill: none;
+    stroke: #16a34a;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cashflow-chart-container .chart-line-spent {
+    fill: none;
+    stroke: #dc2626;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cashflow-chart-container .chart-point-received {
+    fill: #16a34a;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+.cashflow-chart-container .chart-point-spent {
+    fill: #dc2626;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+/* Monthly Net Cash Flow list */
+
+.cashflow-month-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.cashflow-month-row {
+    display: grid;
+    grid-template-columns: minmax(65px, 0.8fr) minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.cashflow-month-row:last-child {
+    border-bottom: none;
+}
+
+.cashflow-month-name {
+    color: #344054;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cashflow-month-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    min-width: 0;
+}
+
+.cashflow-amount {
+    font-size: 12px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.cashflow-amount.received {
+    color: #15803d;
+}
+
+.cashflow-amount.spent {
+    color: #dc2626;
+}
+
+.cashflow-net {
+    margin-top: 3px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.cashflow-net.positive {
+    color: #15803d;
+    background: #f0fdf4;
+}
+
+.cashflow-net.negative {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.cashflow-net.neutral {
+    color: #475467;
+    background: #f2f4f7;
+}
+
+/* Optional summary values above the graph */
+
+.cashflow-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.cashflow-summary-card {
+    padding: 13px;
+    border: 1px solid #edf0f4;
+    border-radius: 10px;
+    background: #ffffff;
+    min-width: 0;
+}
+
+.cashflow-summary-label {
+    color: #667085;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.cashflow-summary-value {
+    font-size: 18px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.cashflow-summary-value.received {
+    color: #15803d;
+}
+
+.cashflow-summary-value.spent {
+    color: #dc2626;
+}
+
+/* Empty data message */
+
+.cashflow-empty {
+    padding: 28px 12px;
+    text-align: center;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+    .cashflow-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cashflow-chart-container {
+        min-height: 230px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .cashflow-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+    }
+
+    .cashflow-panel {
+        padding: 14px;
+    }
+
+    .cashflow-panel .panel-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cashflow-year-select {
+        min-width: 90px;
+        max-width: 120px;
+        padding: 9px;
+        font-size: 14px;
+    }
+
+    .cashflow-legend {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .cashflow-chart-container {
+        min-height: 190px;
+    }
+
+    .cashflow-chart-container .chart-axis-label,
+    .cashflow-chart-container .chart-month-label {
+        font-size: 10px;
+    }
+
+    .cashflow-month-row {
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .cashflow-month-name {
+        font-size: 12px;
+    }
+
+    .cashflow-amount,
+    .cashflow-net {
+        font-size: 11px;
+    }
+
+    .cashflow-summary {
+        gap: 8px;
+    }
+
+    .cashflow-summary-card {
+        padding: 10px;
+    }
+
+    .cashflow-summary-value {
+        font-size: 16px;
+    }
+}
+
+
+/* FIX: Money Flow graph black fill and line colors */
+
+.cashflow-chart {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.cashflow-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Prevent the graph lines from becoming filled shapes */
+.cashflow-svg polyline.cashflow-line-received,
+.cashflow-svg polyline.cashflow-line-spent {
+    fill: none !important;
+    stroke-width: 3px !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    opacity: 1 !important;
+}
+
+/* Money received = green */
+.cashflow-svg polyline.cashflow-line-received {
+    stroke: #16a36a !important;
+}
+
+/* Money spent = red */
+.cashflow-svg polyline.cashflow-line-spent {
+    stroke: #e05252 !important;
+}
+
+/* Keep the data points circular and colored */
+.cashflow-svg circle.cashflow-point-received {
+    fill: #16a36a !important;
+    stroke: #ffffff !important;
+    stroke-width: 1.5px !important;
+}
+
+.cashflow-svg circle.cashflow-point-spent {
+    fill: #e05252 !important;
+    stroke: #ffffff !important;
+    stroke-width: 1.5px !important;
+}
+
+/* Keep grid lines subtle */
+.cashflow-svg line.cashflow-grid-line {
+    stroke: #9ca3af !important;
+    stroke-opacity: 0.25 !important;
+    stroke-width: 1px !important;
+    stroke-dasharray: 4 5 !important;
+}
+
+
+/* =========================================
+   ANKMARK ERP — RECENT PROJECTS WIDTH FIX
+   Graph code remains unchanged
+========================================= */
+
+/* Make the Recent Projects row use full width */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 20px;
+}
+
+/* Let the Recent Projects panel fill the available space */
+.dashboard-grid > .panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Keep the project list clean and aligned */
+.dashboard-grid .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.dashboard-grid .panel-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.dashboard-grid .panel-link {
+    flex-shrink: 0;
+}
+
+/* Keep each project row tidy */
+.dashboard-grid .project-item,
+.dashboard-grid .recent-project-item {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Responsive spacing */
+@media (max-width: 600px) {
+    .dashboard-grid {
+        gap: 14px;
+    }
+
+    .dashboard-grid > .panel {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================
+   ANKMARK ERP — CLEAN CASH FLOW THEME
+========================================= */
+
+/* Match Recent Projects white panel background */
+.cashflow-chart-panel,
+.cashflow-net-panel {
+    background: #ffffff !important;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    padding: 22px;
+}
+
+/* Panel headings */
+.cashflow-panel-title {
+    color: #111827;
+    font-weight: 700;
+}
+
+.cashflow-panel-subtitle {
+    color: #64748b;
+    opacity: 1;
+}
+
+/* Year selector — matching Ankmark's dark theme */
+.cashflow-year-select {
+    background: #111827 !important;
+    color: #ffffff !important;
+    border: 1px solid #111827 !important;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cashflow-year-select:hover {
+    background: #273449 !important;
+    border-color: #273449 !important;
+}
+
+.cashflow-year-select:focus-visible {
+    outline: 2px solid #94a3b8;
+    outline-offset: 3px;
+}
+
+.cashflow-year-select option {
+    background: #ffffff;
+    color: #111827;
+}
+
+/* Legend */
+.cashflow-legend-item {
+    color: #64748b;
+    opacity: 1;
+}
+
+/* Chart labels and grid */
+.cashflow-svg text {
+    fill: #64748b;
+}
+
+.cashflow-svg .cashflow-grid-line {
+    stroke: #cbd5e1 !important;
+    stroke-opacity: 0.6 !important;
+}
+
+/* Monthly breakdown separators */
+.cashflow-month-row {
+    border-bottom-color: #eef0f3;
+}
+
+.cashflow-net-summary {
+    border-top-color: #e5e7eb;
+}
+
+.cashflow-month-name,
+.cashflow-net-summary-label {
+    color: #111827;
+}
+
+.cashflow-detail-label {
+    color: #64748b;
+    opacity: 1;
+}
+
+/* Keep received green and spent red */
+.cashflow-legend-line.received,
+.cashflow-detail-value.received,
+.cashflow-net-amount.positive,
+.cashflow-net-summary-value.positive {
+    color: #16a36a;
+}
+
+.cashflow-legend-line.spent,
+.cashflow-detail-value.spent,
+.cashflow-net-amount.negative,
+.cashflow-net-summary-value.negative {
+    color: #e05252;
+}
+
+/* Consistent mobile spacing */
+@media (max-width: 600px) {
+    .cashflow-chart-panel,
+    .cashflow-net-panel {
+        padding: 16px;
+        border-radius: 12px;
+    }
+}
+
+
+
+/* =========================================
+   ANKMARK ERP — CASH FLOW SPACING FIX
+   CSS ONLY — DO NOT CHANGE GRAPH JS
+========================================= */
+
+/* Keep both cards aligned at the top */
+.cashflow-layout {
+    align-items: start;
+}
+
+/* Graph card spacing */
+.cashflow-chart-panel .cashflow-panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+/* Give the subtitle its own breathing room */
+.cashflow-chart-panel .cashflow-panel-subtitle {
+    margin-top: 7px;
+    line-height: 1.6;
+}
+
+/* Keep year dropdown separated from subtitle */
+.cashflow-chart-panel .cashflow-year-select {
+    margin-top: 2px;
+    min-width: 100px;
+}
+
+/* Separate legend from the year selector */
+.cashflow-chart-panel .cashflow-legend {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    gap: 22px;
+}
+
+/* Keep graph content comfortably spaced */
+.cashflow-chart-panel .cashflow-chart {
+    margin-top: 4px;
+}
+
+/* =========================================
+   NET CASH FLOW — MATCH GRAPH CARD HEIGHT
+========================================= */
+
+.cashflow-net-panel {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    min-height: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Keep the Net Cash Flow heading visible */
+.cashflow-net-panel .cashflow-panel-header {
+    flex: 0 0 auto;
+    margin-bottom: 18px;
+}
+
+/* Scroll monthly rows inside the card */
+.cashflow-net-panel .cashflow-net-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Keep annual total visible at the bottom */
+.cashflow-net-panel .cashflow-net-summary {
+    flex: 0 0 auto;
+    margin-top: 12px;
+    padding-top: 16px;
+    background: #ffffff;
+}
+
+/* Cleaner scrollbar in Chrome and Edge */
+.cashflow-net-panel .cashflow-net-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.cashflow-net-panel .cashflow-net-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cashflow-net-panel .cashflow-net-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .cashflow-net-panel {
+        height: 550px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cashflow-chart-panel .cashflow-panel-header {
+        gap: 10px;
+    }
+
+    .cashflow-chart-panel .cashflow-legend {
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .cashflow-net-panel {
+        height: 500px;
+    }
+}
+

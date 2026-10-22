@@ -1,0 +1,256 @@
+
+/* =========================================
+   ANKMARK STUDIO ERP — LOGIN PAGE
+========================================= */
+
+:root {
+    --login-bg: #f3f4f6;
+    --login-card: #ffffff;
+    --login-text: #111827;
+    --login-muted: #64748b;
+    --login-border: #e5e7eb;
+    --login-dark: #111418;
+    --login-dark-hover: #272c34;
+    --login-error: #dc2626;
+}
+
+/* Reset */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--login-bg);
+    color: var(--login-text);
+}
+
+/* Page layout */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* Login card */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 38px;
+    background: var(--login-card);
+    border: 1px solid var(--login-border);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+}
+
+/* Ankmark branding */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 42px;
+}
+
+.brand-logo {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #ffffff;
+    color: var(--login-dark);
+    border: 1px solid var(--login-border);
+    border-radius: 13px;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.brand-info h1 {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.brand-info p {
+    margin-top: 5px;
+    color: var(--login-muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* Heading */
+
+.login-heading {
+    margin-bottom: 28px;
+}
+
+.login-heading h2 {
+    margin-bottom: 9px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.login-heading p {
+    color: var(--login-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Form */
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm label {
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Password field */
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0 13px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.password-wrapper:focus-within {
+    border-color: var(--login-dark);
+    box-shadow: 0 0 0 3px rgba(17, 20, 24, 0.08);
+}
+
+.password-wrapper input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--login-text);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.password-wrapper input::placeholder {
+    color: #9ca3af;
+}
+
+#togglePassword {
+    padding: 7px 0 7px 8px;
+    background: transparent;
+    border: none;
+    color: var(--login-muted);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#togglePassword:hover {
+    color: var(--login-text);
+}
+
+/* Login button */
+
+.login-button {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 22px;
+    padding: 13px 18px;
+    background: var(--login-dark);
+    color: #ffffff;
+    border: 1px solid var(--login-dark);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.login-button:hover {
+    background: var(--login-dark-hover);
+}
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+.login-button:focus-visible,
+#togglePassword:focus-visible {
+    outline: 2px solid #64748b;
+    outline-offset: 3px;
+}
+
+/* Incorrect password message */
+
+.login-error {
+    margin-top: 10px;
+    color: var(--login-error);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.login-error[hidden] {
+    display: none;
+}
+
+/* Footer */
+
+.login-footer {
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 1px solid #f0f1f3;
+    color: #94a3b8;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 16px;
+    }
+
+    .login-card {
+        padding: 26px 22px;
+        border-radius: 14px;
+    }
+
+    .brand {
+        margin-bottom: 34px;
+    }
+
+    .login-heading h2 {
+        font-size: 23px;
+    }
+}
